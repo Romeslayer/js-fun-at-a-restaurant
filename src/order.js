@@ -19,15 +19,23 @@ function refundOrder(orderNumb, arr) {
 
 function listItems(arr) {
   var string = "";
+  // Loop through array and add the item value to string variable with a comma and space
   for(var i = 0; i < arr.length; i++) {
     string += `${arr[i].item}, `;
   }
+  //delete last space and comma from string
   string = string.slice(0, -2)
   return string;
 }
 
-function searchOrder() {
-
+function searchOrder(arr, item) {
+  var boolean = false
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i].item == item) {
+      boolean = true;
+    }
+  }
+  return boolean;
 }
 
 module.exports = {
