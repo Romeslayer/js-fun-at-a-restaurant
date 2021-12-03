@@ -17,10 +17,22 @@ function refundOrder(orderNumb, arr) {
 )
 }
 
+function listItems(arr) {
+  var string = "";
+  for(var i = 0; i < arr.length; i++) {
+    string += `${arr[i].item}, `;
+  }
+  string = string.slice(0, -2)
+  return string;
+}
+
+function searchOrder() {
+
+}
 
 module.exports = {
   takeOrder,
   refundOrder,
-  // listItems,
-  // searchOrder
+  listItems,
+  searchOrder
 }
