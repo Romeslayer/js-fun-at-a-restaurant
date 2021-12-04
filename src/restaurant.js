@@ -8,7 +8,7 @@ function createRestaurant(name) {
   };
 
   return restaurant;
-}
+};
 
 function addMenuItem(restaurant, menuItem) {
   var restaurantMenuRef = restaurant.menus[menuItem.type]
@@ -28,10 +28,31 @@ function addMenuItem(restaurant, menuItem) {
       restaurantMenuRef.push(menuItem);
     }
   }
-}
+};
+
+function removeMenuItem (restaurant, item, type) {
+  var arr = restaurant.menus[type];
+  var newArr = []
+  var boolean = false
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i].name === item) {
+      boolean = true;
+    } else {
+      newArr.push(arr[i])
+    }
+  }
+
+  restaurant.menus[type] = newArr;
+
+  if (boolean) {
+    return 'No one is eating our ' + item + " - it has been removed from the " + type + " menu!";
+  } else {
+    return 'Sorry, we don\'t sell ' + item + ', try adding a new recipe!';
+  }
+};
 
 module.exports = {
   createRestaurant,
   addMenuItem,
-  // removeMenuItem
+  removeMenuItem
 }
