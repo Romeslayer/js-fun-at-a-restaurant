@@ -32,15 +32,15 @@ function addMenuItem(restaurant, menuItem) {
 
 function removeMenuItem (restaurant, item, type) {
   var arr = restaurant.menus[type];
-  var newArr = []
-  var boolean = false
+  var newArr = [];
+  var boolean = false;
   for(var i = 0; i < arr.length; i++) {
     if(arr[i].name === item) {
       boolean = true;
     } else {
-      newArr.push(arr[i])
+      newArr.push(arr[i]);
     }
-  }
+  };
 
   restaurant.menus[type] = newArr;
 
@@ -55,4 +55,4 @@ module.exports = {
   createRestaurant,
   addMenuItem,
   removeMenuItem
-}
+};
